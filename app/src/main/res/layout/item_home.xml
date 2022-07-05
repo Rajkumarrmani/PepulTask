@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="homeItemUiState"
+            type="com.example.pepul.ui.HomeItemUiState" />
+
+        <variable
+            name="itemClick"
+            type="com.example.pepul.common.HomeItemClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemLayout"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> itemClick.onProductItemClicked(homeItemUiState.onClick)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            imageUrl="@{homeItemUiState.imageUrl}"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/customRoundedImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/videoIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_baseline_videocam_24"
+            android:visibility="@{homeItemUiState.getFileType}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9"
+            app:shapeAppearanceOverlay="@style/customRoundedImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

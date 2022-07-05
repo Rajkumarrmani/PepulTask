@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="customRoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <!--Primary Text Bold-->
+    <style name="PrimaryTextBold" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textAppearance">@style/TextAppearanceBold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!--TextAppearance Bold-->
+    <style name="TextAppearanceBold" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="font">@font/font_bold</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+</resources>
